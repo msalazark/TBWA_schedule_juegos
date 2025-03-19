@@ -1,10 +1,27 @@
 import React from "react";
 
-function GameOption({ game, onReserve }) {
+
+function GameOption({ game, onReserve, backgroundColor }) {
   return (
-    <section className="game-option">
+    <section className="game-option"
+      style={{
+        backgroundColor: backgroundColor,
+      }}
+    >
+      {/* Header con logo a la izquierda y botón de reserva a la derecha */}
+      <div className="game-header">
+        <img src="/logo-barqueros.png" alt="Logo de la empresa" className="game-logo" />
+        <button className="reserve-btn" onClick={() => onReserve(game.id)}>
+          Reservar
+        </button>
+      </div>
+      
+      {/* Separador horizontal */}
+      <hr className="separator" />
+      
+      {/* Contenedor de columnas: dos columnas iguales */}
       <div className="game-columns">
-        {/* Columna Izquierda: Imagen y características */}
+        {/* Columna izquierda: imagen y datos */}
         <div className="column-left">
           <img src={game.image} alt={game.title} className="game-photo" />
           <div className="game-data">
@@ -13,21 +30,18 @@ function GameOption({ game, onReserve }) {
             <div className="circle">{game.difficulty}</div>
           </div>
         </div>
-        {/* Columna Derecha: Título y descripción */}
+        {/* Columna derecha: título y descripción */}
         <div className="column-right">
-          <h1>{game.title}</h1>
+          <h1 className="title-game">{game.title}</h1>
           <div className="description">
             <p>{game.description1}</p>
             <p>{game.description2}</p>
           </div>
         </div>
       </div>
-      {/* Botón de reserva en la esquina inferior derecha */}
-      <button className="reserve-btn" onClick={() => onReserve(game.id)}>
-        Reservar
-      </button>
-      {/* Logo en la esquina inferior izquierda */}
-      <img src="/logo-barqueros.png" alt="Logo de la empresa" className="game-logo" />
+      
+      {/* Separador horizontal final */}
+      <hr className="separator" />
     </section>
   );
 }

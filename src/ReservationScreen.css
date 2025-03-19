@@ -1,0 +1,121 @@
+/* Estilos para la pantalla de reserva */
+.reservation-screen {
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: #a2d5f2;
+}
+
+/* Contenedor de columnas: dos columnas */
+.reservation-container {
+  display: flex;
+  height: calc(100vh - 80px); /* Espacio para el botón "Volver" */
+  gap: 20px;
+}
+
+/* Columna izquierda: imagen */
+.reservation-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reservation-left img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Columna derecha: dropdown, título, grilla o formulario */
+.reservation-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+.reservation-right select {
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.reservation-right h2 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Grilla de horarios: 3 filas y 6 columnas */
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.time-slot {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Horarios reservados para hoy */
+.time-slot.reserved {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Horarios reservados para fechas futuras */
+.time-slot.reserved-future {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* Horarios pasados (para el día de hoy) */
+.time-slot.past {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+/* Formulario de registro */
+.registration-form {
+  margin-top: 20px;
+}
+.registration-form h3 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.registration-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.registration-form input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.confirm-btn {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Botón "Volver" */
+.back-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
