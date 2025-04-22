@@ -1,0 +1,124 @@
+/* GameOption.css */
+/* Asegúrate de importarlo en GameOption.jsx: import "./GameOption.css"; */
+
+.game-option .reserve-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Contenedor del formulario de suscripción */
+.game-option .subscribe-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Input de email dentro del formulario de suscripción */
+  .game-option .subscribe-form input[type="email"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Botón de envío de suscripción */
+  .game-option .subscribe-btn {
+    padding: 0.5rem 1rem;
+    background-color: #007bff; /* azul */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  /* Deshabilitado mientras envía */
+  .game-option .subscribe-btn:disabled {
+    background-color: #6c757d; /* gris */
+    cursor: not-allowed;
+  }
+  
+  /* Texto de error debajo del formulario */
+  .game-option .error-text {
+    color: #d9534f; /* rojo */
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Mensaje de "gracias" tras suscribirse */
+  .game-option .thanks-text {
+    color: #28a745; /* verde */
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+
+  /* GameOption.css */
+
+/* ===== Responsive móvil ===== */
+@media (max-width: 768px) {
+  /* Oculta el botón de “RESERVA” del header */
+  .game-option .game-header .reserve-btn {
+    display: none;
+  }
+
+  /* Pasa de dos columnas a una sola */
+  .game-option .game-columns {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* La columna izquierda (imagen) al tope */
+  .game-option .column-left {
+    width: 80%;
+    max-width: none;  
+    margin-top: 45px;
+  }
+
+  /* Ajusta la imagen para ocupar el ancho completo */
+
+  .game-option .column-left .game-photo,
+  .game-option .column-left .ficha {
+    width: 90%;
+    max-width: none;
+  }
+
+  /* La columna derecha (texto) justo después */
+  .game-option .column-right {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* Asegura que el botón principal esté abajo */
+  .game-option .column-right {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .game-option .reserve-btn-game,
+  .game-option .subscribe-form,
+  .game-option .thanks-text {
+    margin-top: auto; /* empuja el botón al fondo */
+  }
+
+  /* Ajusta tamaños de texto para móvil */
+  .game-option .title-game {
+    padding-top: 0.5rem;
+    font-size: 50px; 
+    line-height: 0.9;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+  }
+  .game-option .description p {
+    font-size: 0.95rem;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+}

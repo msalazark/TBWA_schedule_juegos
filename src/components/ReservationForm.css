@@ -1,0 +1,42 @@
+.selected-time {
+    font-size: 1em;
+    margin-bottom: 1rem;
+  }
+  
+  .change-time {
+    color: #007bff;
+    text-decoration: underline;
+    font-size: 0.9em;
+  }
+
+
+  @media (max-width: 768px) {
+    /* Formulario de registro en una sola columna */
+    .reservation-right .registration-form-grid {
+      display: grid;
+      grid-template-columns: 1fr !important;
+      gap: 16px;
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    /* Cada input y botón ocupa el 100% */
+    .reservation-right .registration-form-grid .form-column,
+    .reservation-right .registration-form-grid .form-column input,
+    .reservation-right .registration-form-grid .form-column button {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    /* Ajuste extra para el botón de confirmar */
+    .reservation-right .registration-form-grid .confirm-btn {
+      margin-top: 8px;
+    }
+
+
+    .schedule-title {
+      font-size: 24px !important;
+      margin-bottom: 24px !important;
+    }
+  }
+  

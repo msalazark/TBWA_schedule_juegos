@@ -1,0 +1,332 @@
+/* Estilos para la pantalla de reserva */
+.reservation-screen {
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #a2d5f2;
+}
+
+/* Contenedor de columnas: dos columnas */
+.reservation-container {
+  display: flex;
+  height: calc(100vh - 80px); /* Espacio para el botón "Volver" */
+  gap: 20px;
+}
+
+/* Header: logo a la izquierda y botón "Volver" en la esquina superior derecha */
+.reservation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.header-logo {
+  width: 80px;
+}
+
+/* Botón "Volver" */
+.header-back-btn {
+  padding: 10px 20px;
+  background-color: #4EFDFF;
+  color: #1D38BC;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+/* Columna izquierda: imagen */
+.reservation-left {
+  flex: 1;
+  flex-direction: column;
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reservation-left img {
+  width: 400px;
+  height: auto;
+  max-width: 600px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.game-title {
+  font-family: 'Dharma Gothic E', sans-serif;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 64px;
+  line-height: 0.9;
+  max-width: 400px;
+  
+}
+
+/* Columna derecha: dropdown, título, grilla o formulario */
+.reservation-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.reservation-right h2 {
+  font-family: 'Dharma Gothic E', sans-serif;
+  color: white;
+  font-size: 44px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reservation-right p {
+  margin-top: 30px;
+  font-size: 14px;
+  color: white;
+  text-align: left;
+}
+
+/* Grilla de horarios: 3 filas y 6 columnas */
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+.time-slot {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.time-slot:hover {
+  background-color: #4EFDFF; /* Cambia el fondo al pasar el cursor */
+  color: #1D38BC;
+}
+
+/* Horarios reservados para hoy */
+.time-slot.reserved {
+  background-color: #0c174d;
+  cursor: not-allowed;
+}
+
+/* Horarios reservados para fechas futuras */
+.time-slot.reserved-future {
+  background-color: #0c174d;
+  cursor: not-allowed;
+}
+
+/* Horarios pasados (para el día de hoy) */
+.time-slot.past {
+  background-color: #777373;
+  cursor: not-allowed;
+  font-style: italic;
+}
+
+
+
+/* Formulario de registro */
+.registration-form {
+  margin-top: 20px;
+}
+.registration-form h3 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.registration-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.confirm-btn {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Dropdown personalizado */
+
+.reservation-right select.custom-dropdown {
+  width: 200px;
+  align-items: center;
+}
+
+select.custom-dropdown {
+  appearance: none;           /* Quitar apariencia por defecto en navegadores compatibles */
+  -webkit-appearance: none;   /* Para Safari y Chrome */
+  -moz-appearance: none;      /* Para Firefox */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 40px 10px 15px;  /* Se deja espacio para la flecha personalizada */
+  font-size: 1em;
+  color: #0c174d;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  align-content: center;
+  background-image: url('/public/portada_flecha.png');  /* Icono de flecha: actualiza la ruta */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+
+.selected-time {
+  appearance: none;           /* Quitar apariencia por defecto en navegadores compatibles */
+  -webkit-appearance: none;   /* Para Safari y Chrome */
+  -moz-appearance: none;      /* Para Firefox */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 40px 10px 15px;  /* Se deja espacio para la flecha personalizada */
+  font-size: 1em;
+  color: #0c174d;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  align-content: center;
+  background-image: url('/public/portada_flecha.png');  /* Icono de flecha: actualiza la ruta */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+/* Efecto hover para el dropdown */
+select.custom-dropdown:hover {
+  border-color: #007bff;
+}
+
+/* Efecto focus para mayor accesibilidad */
+select.custom-dropdown:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+
+/* Formulario en dos columnas */
+.registration-form-grid {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+gap: 20px;
+}
+
+.form-column {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.reserve-btn-game {
+padding: 10px;
+background-color: #007bff;
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.registration-form-grid input {
+padding: 10px;
+font-size: 14px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+
+
+@media (max-width: 768px) {
+  /* Contenedor principal en columna */
+  .reservation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    height: fit-content;
+    padding-bottom: 10px;
+  }
+
+  /* Imagen + título uno al lado del otro */
+  .reservation-left {
+    display: flex;
+    flex-direction: row;       /* fila en lugar de columna */
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 10px;
+  }
+  .reservation-left img {
+    width: 50%;                /* ajuste: ocupa 40% del ancho */
+    max-height: 150px;         /* límite de altura */
+    object-fit: contain;
+    border-radius: 8px;
+    margin-right: 10px;       /* espacio entre imagen y título */
+    
+
+  }
+  .reservation-left .game-title {
+    width: 50%;                /* el resto para el título */
+    margin-left: 10px;
+    font-size: 30px;
+    text-align: left;
+    line-height: 1.1;
+    color: inherit;
+  }
+
+  /* Dropdown de fecha centrado */
+  .custom-dropdown {
+    width: 80%;
+    max-width: 300px;
+    margin: 10px ;
+    padding: 0;
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Horarios en bloque de 3 columnas */
+  .time-slots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 90%;
+    max-width: 360px;
+    margin: 10px auto 0;
+  }
+
+  .time-slot {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .schedule-title {
+    font-size: 24px !important;
+    margin-bottom: 24px !important;
+  }
+
+}

@@ -10,7 +10,10 @@
   background: url('/public/portada_background.png') no-repeat center center; /* Cambia la ruta al fondo */
   background-size: cover;
   color: #a2d5f2;
+  overflow: hidden;
+  /* transition: transform 1s ease-in-out, opacity 1s ease-in-out; */ /* Transición para transform y opacidad */
 }
+
 
 .continue-arrow {
   position: absolute;

@@ -5,15 +5,12 @@
   font-style: normal;
 }
 
-
 /* Estilos globales */
 html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1e90ff, #00bfff);
-  color: #a2d5f2;
 }
 
 /* Contenedor principal con scroll y scroll-snap */
@@ -22,8 +19,6 @@ html, body, #root {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   position: relative;
-  background: linear-gradient(135deg, #1e90ff, #00bfff);
-  color: #a2d5f2;
 }
 
 /* Cada opción de juego ocupa toda la ventana */
@@ -45,13 +40,16 @@ html, body, #root {
   align-items: center;
   width: 100%;
 }
+
 .reserve-btn {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: #4EFDFF;
+  color: #1D38BC;
   border: none;
   cursor: pointer;
+  border-radius: 25px;
 }
+
 .game-logo {
   width: 80px;
 }
@@ -60,7 +58,7 @@ html, body, #root {
 .separator {
   border: 0;
   height: 1px;
-  background: #a2d5f2;
+  background: #FFFFFF;
   margin: 10px 0;
 }
 
@@ -75,10 +73,25 @@ html, body, #root {
 }
 
 /* Ambas columnas con mismo padding lateral */
-.column-left,
+.column-left {
+  flex: 1; /* Mismo ancho */
+  width: 400px;
+  height: auto;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .column-right {
   flex: 1; /* Mismo ancho */
-  padding: 0 20px;
+  width: 500px;
+  height: auto;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,9 +101,17 @@ html, body, #root {
 .column-left {
   justify-content: flex-start;
 }
+.ficha {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  padding-top: 20px;
+  border-radius: 8px;
+
+}
 .game-photo {
   width: 300px;
-  height: 300px;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -99,25 +120,31 @@ html, body, #root {
   font-family: 'Dharma Gothic E', sans-serif;
   font-size: 64px;
   margin: 10px 0;
+  line-height: 0.9;
 }
 
 .game-data {
+  font-family: 'Dharma Gothic E', sans-serif;
   display: flex;
   gap: 10px;
   margin-top: 10px;
   justify-content: center;
   width: 100%;
 }
+
 .circle {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: #ddd;
+  border: #333;
+  border-width: 5px;
+  border-color: #FFFFFF;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: #333;
+  
 }
 
 /* Columna Derecha: título y descripción */
@@ -153,17 +180,51 @@ html, body, #root {
   margin-bottom: 20px;
   justify-content: center;
 }
-.time-slot {
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+
 .back-btn {
   padding: 10px 20px;
   background-color: #6c757d;
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.reserve-btn-game {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: large;
+  background-color: #4EFDFF;
+  color: #1D38BC;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+
+/* Imagen de ruido a la izquierda */
+.left-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;         /* O el ancho que necesites */
+  height: 100%;
+  background: url('/public/noise-left.png') no-repeat left center;
+  background-size: contain; /* Ajusta según cómo quieras que se muestre */
+  opacity: 0.5;       /* Ajusta la opacidad si lo deseas */
+  pointer-events: none; /* Para que no interfiera con la interacción */
+  z-index: 1;
+}
+
+/* Imagen de ruido a la derecha */
+.right-noise {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;         /* O el ancho que necesites */
+  height: 100%;
+  background: url('/public/noise-right.png') no-repeat right center;
+  background-size: contain; /* Ajusta según necesites */
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
 }
